@@ -4,20 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="pageTitle">鮮淨解憂雜貨舖 | 鹽熨熱療</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* 字體後備：Google Fonts 載入失敗時使用系統繁中字體 */
+body { font-family: 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', 'PingFang TC', sans-serif !important; }
+</style>
 <style>
 :root{--cream:#FDF6EE;--warm-orange:#E8936A;--soft-orange:#F5C49A;--deep-orange:#C4622D;--muted-gold:#D4A853;--warm-white:#FEFAF4;--text-dark:#2A2118;--text-mid:#5C4A35;--text-light:#9B8068;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;}
+body{font-family:'Noto Sans TC','Microsoft JhengHei','微軟正黑體','PingFang TC',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(253,246,238,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,168,83,0.2);}
-.nav-logo{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;color:var(--deep-orange);letter-spacing:0.08em;}
+.nav-logo{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:26px;font-weight:700;color:var(--deep-orange);letter-spacing:0.08em;}
 .nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:13px;letter-spacing:0.12em;color:var(--text-mid);text-decoration:none;transition:color 0.3s;}
+.nav-links a{font-size:21px;letter-spacing:0.12em;color:var(--text-mid);text-decoration:none;transition:color 0.3s;}
 .nav-links a:hover{color:var(--deep-orange);}
-.admin-link{font-size:11px;color:var(--text-light);text-decoration:none;padding:6px 14px;border:1px solid rgba(156,128,104,0.3);border-radius:20px;transition:all 0.3s;}
+.admin-link{font-size:19px;color:var(--text-light);text-decoration:none;padding:6px 14px;border:1px solid rgba(156,128,104,0.3);border-radius:20px;transition:all 0.3s;}
 .admin-link:hover{color:var(--deep-orange);border-color:var(--deep-orange);}
 
 /* CAROUSEL */
@@ -28,10 +34,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .carousel-slide .slide-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(42,33,24,0.45) 0%,rgba(42,33,24,0.15) 60%,transparent 100%);}
 .carousel-slide .slide-caption{position:absolute;bottom:80px;left:80px;color:white;max-width:500px;opacity:0;transform:translateY(20px);transition:opacity 0.6s 0.4s ease,transform 0.6s 0.4s ease;}
 .carousel-slide.active .slide-caption{opacity:1;transform:translateY(0);}
-.slide-caption .tag{font-size:11px;letter-spacing:0.3em;color:rgba(255,255,255,0.8);margin-bottom:12px;display:block;}
-.slide-caption h2{font-family:'Noto Serif TC',serif;font-size:clamp(22px,3vw,38px);line-height:1.6;font-weight:700;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,0.3);}
-.slide-caption p{font-size:14px;line-height:1.9;color:rgba(255,255,255,0.85);font-weight:300;}
-.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,0.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.3);border-radius:50%;color:white;font-size:24px;cursor:pointer;transition:background 0.3s,transform 0.3s;display:flex;align-items:center;justify-content:center;z-index:10;}
+.slide-caption .tag{font-size:19px;letter-spacing:0.3em;color:rgba(255,255,255,0.8);margin-bottom:12px;display:block;}
+.slide-caption h2{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:clamp(22px,3vw,38px);line-height:1.6;font-weight:700;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,0.3);}
+.slide-caption p{font-size:22px;line-height:1.9;color:rgba(255,255,255,0.85);font-weight:300;}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,0.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.3);border-radius:50%;color:white;font-size:32px;cursor:pointer;transition:background 0.3s,transform 0.3s;display:flex;align-items:center;justify-content:center;z-index:10;}
 .carousel-btn:hover{background:rgba(255,255,255,0.35);transform:translateY(-50%) scale(1.1);}
 .carousel-btn.prev{left:28px;}.carousel-btn.next{right:28px;}
 .carousel-dots{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
@@ -40,13 +46,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 
 /* SECTIONS */
 section{padding:100px 80px;}
-.section-tag{font-size:11px;letter-spacing:0.3em;color:var(--warm-orange);margin-bottom:12px;display:block;}
-.section-title{font-family:'Noto Serif TC',serif;font-size:clamp(28px,3vw,42px);line-height:1.5;font-weight:700;color:var(--text-dark);margin-bottom:16px;}
-.section-sub{font-size:15px;color:var(--text-light);line-height:2;font-weight:300;max-width:500px;}
+.section-tag{font-size:19px;letter-spacing:0.3em;color:var(--warm-orange);margin-bottom:12px;display:block;}
+.section-title{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:clamp(28px,3vw,42px);line-height:1.5;font-weight:700;color:var(--text-dark);margin-bottom:16px;}
+.section-sub{font-size:23px;color:var(--text-light);line-height:2;font-weight:300;max-width:500px;}
 
 /* ABOUT */
 .about-section{background:var(--warm-white);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.about-quote{font-family:'Noto Serif TC',serif;font-size:clamp(16px,2vw,22px);line-height:2;color:var(--text-dark);position:relative;padding-left:24px;margin:28px 0;}
+.about-quote{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:clamp(16px,2vw,22px);line-height:2;color:var(--text-dark);position:relative;padding-left:24px;margin:28px 0;}
 .about-quote::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;background:linear-gradient(to bottom,var(--warm-orange),var(--muted-gold));border-radius:2px;}
 .about-img{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(196,98,45,0.12);}
 .about-img img{width:100%;height:360px;object-fit:cover;}
@@ -58,18 +64,18 @@ section{padding:100px 80px;}
 .compare-col{background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.06);}
 .compare-col.highlight{background:linear-gradient(160deg,#FEF0E3,#FDDFC8);box-shadow:0 16px 48px rgba(196,98,45,0.15);transform:scale(1.02);}
 .compare-head{padding:24px;text-align:center;border-bottom:1px solid rgba(0,0,0,0.06);}
-.compare-head h3{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.compare-head h3{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:26px;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
 .compare-head.orange h3{color:var(--deep-orange);}
-.compare-head span{font-size:11px;color:var(--text-light);letter-spacing:0.05em;}
+.compare-head span{font-size:19px;color:var(--text-light);letter-spacing:0.05em;}
 .compare-items{padding:24px;}
-.compare-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:13px;color:var(--text-mid);line-height:1.6;}
+.compare-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:21px;color:var(--text-mid);line-height:1.6;}
 .compare-item:last-child{border-bottom:none;}
 .ci-dot{width:6px;height:6px;border-radius:50%;background:var(--text-light);margin-top:6px;flex-shrink:0;}
 .ci-dot.orange{background:var(--warm-orange);}
-.compare-verdict{padding:16px 24px;text-align:center;font-size:13px;font-weight:500;color:var(--text-light);background:rgba(0,0,0,0.02);}
+.compare-verdict{padding:16px 24px;text-align:center;font-size:21px;font-weight:500;color:var(--text-light);background:rgba(0,0,0,0.02);}
 .compare-verdict.orange{background:rgba(196,98,45,0.08);color:var(--deep-orange);}
 .compare-mid{display:flex;align-items:center;justify-content:center;padding:40px 0;}
-.vs-badge{width:48px;height:48px;border-radius:50%;background:var(--text-dark);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:0.05em;}
+.vs-badge{width:48px;height:48px;border-radius:50%;background:var(--text-dark);color:white;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;letter-spacing:0.05em;}
 
 /* BENEFITS */
 .benefits-section{background:var(--warm-white);text-align:center;}
@@ -78,25 +84,25 @@ section{padding:100px 80px;}
 .benefit-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--warm-orange),var(--muted-gold));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
 .benefit-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(196,98,45,0.1);}
 .benefit-card:hover::after{transform:scaleX(1);}
-.benefit-icon{font-size:40px;margin-bottom:20px;}
-.benefit-card h3{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:12px;}
-.benefit-card p{font-size:13px;color:var(--text-light);line-height:1.9;}
+.benefit-icon{font-size:48px;margin-bottom:20px;}
+.benefit-card h3{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:26px;font-weight:700;color:var(--text-dark);margin-bottom:12px;}
+.benefit-card p{font-size:21px;color:var(--text-light);line-height:1.9;}
 
 /* CTA */
 .cta-section{background:linear-gradient(135deg,var(--deep-orange) 0%,#E8936A 100%);text-align:center;padding:120px 80px;position:relative;overflow:hidden;}
 .cta-section .section-title{color:white;max-width:600px;margin:0 auto 16px;}
 .cta-section .section-sub{color:rgba(255,255,255,0.8);margin:0 auto 48px;max-width:400px;}
-.btn-white{padding:16px 40px;background:white;color:var(--deep-orange);border:none;border-radius:4px;font-family:'Noto Sans TC',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.1em;cursor:pointer;text-decoration:none;transition:all 0.3s;position:relative;z-index:1;}
+.btn-white{padding:16px 40px;background:white;color:var(--deep-orange);border:none;border-radius:4px;font-family:'Noto Sans TC','Microsoft JhengHei','微軟正黑體','PingFang TC',sans-serif;font-size:23px;font-weight:500;letter-spacing:0.1em;cursor:pointer;text-decoration:none;transition:all 0.3s;position:relative;z-index:1;}
 .btn-white:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.2);}
 
 /* FOOTER */
 footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:60px 80px 40px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;}
-.footer-logo{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;color:var(--soft-orange);display:block;margin-bottom:12px;}
-.footer-brand p{font-size:12px;line-height:1.9;color:rgba(255,255,255,0.4);max-width:280px;}
-.footer-col h5{font-size:13px;font-weight:500;color:rgba(255,255,255,0.8);margin-bottom:16px;letter-spacing:0.1em;}
+.footer-logo{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:26px;font-weight:700;color:var(--soft-orange);display:block;margin-bottom:12px;}
+.footer-brand p{font-size:20px;line-height:1.9;color:rgba(255,255,255,0.4);max-width:280px;}
+.footer-col h5{font-size:21px;font-weight:500;color:rgba(255,255,255,0.8);margin-bottom:16px;letter-spacing:0.1em;}
 .footer-col ul{list-style:none;}
-.footer-col li{font-size:12px;margin-bottom:10px;color:rgba(255,255,255,0.4);}
-.footer-bottom{background:var(--text-dark);padding:20px 80px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,0.25);}
+.footer-col li{font-size:20px;margin-bottom:10px;color:rgba(255,255,255,0.4);}
+.footer-bottom{background:var(--text-dark);padding:20px 80px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;font-size:19px;color:rgba(255,255,255,0.25);}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease;}
@@ -179,7 +185,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:60px 80px
     </div>
   </div>
   <div style="margin-top:48px;text-align:center;">
-    <p id="compareConclusion" style="font-family:'Noto Serif TC',serif;font-size:20px;color:var(--text-dark);">進得去的熱，才會帶來改變</p>
+    <p id="compareConclusion" style="font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:20px;color:var(--text-dark);">進得去的熱，才會帶來改變</p>
   </div>
 </section>
 

@@ -10,6 +10,24 @@
 <style>
 /* 字體後備：Google Fonts 載入失敗時使用系統繁中字體 */
 body { font-family: 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', 'PingFang TC', sans-serif !important; }
+
+  /* ── HAMBURGER ── */
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--deep-orange);border-radius:2px;transition:all 0.3s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(253,246,238,0.98);backdrop-filter:blur(10px);z-index:99;padding:16px 0;border-bottom:1px solid rgba(212,168,83,0.2);flex-direction:column;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:14px 32px;font-size:15px;color:var(--text-mid);text-decoration:none;letter-spacing:0.1em;border-bottom:1px solid rgba(0,0,0,0.04);transition:color 0.2s;}
+  .mobile-menu a:hover{color:var(--deep-orange);}
+
+  /* ── TOP BUTTON ── */
+  .top-btn{position:fixed;bottom:28px;right:24px;z-index:200;padding:10px 16px;background:var(--deep-orange);color:white;border:none;border-radius:24px;font-size:12px;font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;letter-spacing:0.1em;cursor:pointer;opacity:0;transform:translateY(10px);transition:all 0.3s;pointer-events:none;box-shadow:0 4px 16px rgba(196,98,45,0.3);}
+  .top-btn.visible{opacity:1;transform:translateY(0);pointer-events:all;}
+  .top-btn:hover{background:#A84F22;transform:translateY(-2px);}
 </style>
 <style>
 :root{--cream:#FDF6EE;--warm-orange:#E8936A;--soft-orange:#F5C49A;--deep-orange:#C4622D;--muted-gold:#D4A853;--warm-white:#FEFAF4;--text-dark:#2A2118;--text-mid:#5C4A35;--text-light:#9B8068;}
@@ -27,13 +45,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .admin-link:hover{color:var(--deep-orange);border-color:var(--deep-orange);}
 
 /* CAROUSEL */
-.carousel-wrap{position:relative;width:100%;height:calc(100vw * 0.43);max-height:600px;overflow:hidden;margin-top:64px;}
+.carousel-wrap{position:relative;width:100%;overflow:hidden;margin-top:64px;}
 
-.carousel-track{display:flex;height:100%;transition:transform 0.7s cubic-bezier(0.77,0,0.175,1);}
-.carousel-slide{min-width:100%;height:100%;position:relative;overflow:hidden;flex-shrink:0;}
-.carousel-slide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.carousel-track{display:flex;transition:transform 0.7s cubic-bezier(0.77,0,0.175,1);}
+.carousel-slide{min-width:100%;position:relative;overflow:hidden;flex-shrink:0;}
+.carousel-slide img{width:100%;height:auto;display:block;}
 .carousel-slide .slide-overlay{position:absolute;inset:0;background:transparent;}
-.carousel-slide .slide-caption{position:absolute;bottom:60px;left:0;right:0;padding:24px 32px;color:white;max-width:100%;opacity:0;transform:translateY(20px);transition:opacity 0.6s 0.4s ease,transform 0.6s 0.4s ease;background:linear-gradient(0deg, rgba(20,12,6,0.6) 0%, rgba(20,12,6,0.4) 50%, rgba(20,12,6,0.1) 80%, transparent 100%);}
+.carousel-slide .slide-caption{position:absolute;bottom:0;left:0;right:0;padding:24px 32px;color:white;max-width:100%;opacity:0;transform:translateY(20px);transition:opacity 0.6s 0.4s ease,transform 0.6s 0.4s ease;background:linear-gradient(0deg, rgba(20,12,6,0.6) 0%, rgba(20,12,6,0.4) 50%, rgba(20,12,6,0.1) 80%, transparent 100%);}
 .carousel-slide.active .slide-caption{opacity:1;transform:translateY(0);}
 .slide-caption .tag{font-size:19px;letter-spacing:0.3em;color:rgba(255,255,255,0.8);margin-bottom:12px;display:block;}
 .slide-caption h2{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:clamp(22px,3vw,38px);line-height:1.6;font-weight:700;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,0.3);}
@@ -111,7 +129,8 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:60px 80px
 
 @media(max-width:900px){ *{max-width:100%;} .section-sub{white-space:normal!important;word-break:break-all;} 
   nav{padding:16px 24px;}
-  .nav-links{display:none;}
+  .nav-links{display:none!important;}
+  .hamburger{display:flex;}
   section{padding:60px 24px;}
   .about-section,.compare-section .compare-table{display:block;}
   .compare-table{display:block!important;}
@@ -360,11 +379,31 @@ function buildCarousel(slides) {
   timer=setInterval(()=>goTo(current+1),5000);
 }
 
+// Hamburger menu
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+// Top button
+window.addEventListener('scroll', function(){
+  const btn = document.getElementById('topBtn');
+  if(window.scrollY > 300) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
+
 // Scroll reveal
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});},{threshold:0.1});
 document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 
 render(getData());
 </script>
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲ TOP</button>
 </body>
 </html>

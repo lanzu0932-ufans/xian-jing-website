@@ -51,7 +51,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .carousel-slide{min-width:100%;width:100%;height:100%;position:relative;overflow:hidden;flex-shrink:0;}
 .carousel-slide img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .carousel-slide .slide-overlay{position:absolute;inset:0;background:transparent;}
-.carousel-slide .slide-caption{position:absolute;bottom:0;left:0;right:0;padding:24px 32px;color:white;max-width:100%;opacity:0;transform:translateY(20px);transition:opacity 0.6s 0.4s ease,transform 0.6s 0.4s ease;background:linear-gradient(0deg, rgba(20,12,6,0.6) 0%, rgba(20,12,6,0.4) 50%, rgba(20,12,6,0.1) 80%, transparent 100%);}
+.carousel-slide .slide-caption{position:absolute;bottom:28px;left:0;right:0;padding:24px 32px;color:white;max-width:100%;opacity:0;transform:translateY(20px);transition:opacity 0.6s 0.4s ease,transform 0.6s 0.4s ease;background:linear-gradient(0deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.35) 70%, transparent 100%);}
 .carousel-slide.active .slide-caption{opacity:1;transform:translateY(0);}
 .slide-caption .tag{font-size:19px;letter-spacing:0.3em;color:rgba(255,255,255,0.8);margin-bottom:12px;display:block;}
 .slide-caption h2{font-family:'Noto Serif TC','PMingLiU','新細明體',serif;font-size:clamp(22px,3vw,38px);line-height:1.6;font-weight:700;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,0.3);}
@@ -59,7 +59,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,0.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.3);border-radius:50%;color:white;font-size:32px;cursor:pointer;transition:background 0.3s,transform 0.3s;display:flex;align-items:center;justify-content:center;z-index:10;}
 .carousel-btn:hover{background:rgba(255,255,255,0.35);transform:translateY(-50%) scale(1.1);}
 .carousel-btn.prev{left:28px;}.carousel-btn.next{right:28px;}
-.carousel-dots{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
+.carousel-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:6;}
 .dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s;}
 .dot.active{background:white;width:24px;}
 
@@ -131,8 +131,13 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:60px 80px
   nav{padding:16px 24px;}
   .nav-links{display:none!important;}
   .hamburger{display:flex;}
-  .carousel-wrap{height:220px!important;margin-top:56px!important;} .carousel-btn{display:none!important;} .slide-caption p{font-size:13px;white-space:normal;word-break:break-word;} .slide-caption h2{font-size:18px;}
-  section{padding:60px 24px;}
+  .carousel-wrap{height:370px!important;margin-top:56px!important;} #about{padding-top:32px;}
+  p, .section-sub, .compare-item, .benefit-card p, .about-quote, .footer-brand p { font-size:21px; }
+  .slide-caption p { font-size:19px; } .slide-caption h2 { font-size:22px!important; font-weight:900!important; color:#ffffff!important; text-shadow:0 2px 12px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,0.9)!important; }
+    .slide-caption .tag { font-size:14px!important; color:#ffffff!important; text-shadow:0 1px 8px rgba(0,0,0,1)!important; letter-spacing:0.2em!important; }
+    .slide-caption p { font-size:17px!important; color:#f0f0f0!important; text-shadow:0 1px 8px rgba(0,0,0,1), 0 0 16px rgba(0,0,0,0.9)!important; font-weight:500!important; }
+ .carousel-btn{display:none!important;} .slide-caption p{font-size:13px;white-space:normal;word-break:break-word;} .slide-caption h2{font-size:18px;}
+  section{padding:40px 24px;}
   .about-section,.compare-section .compare-table{display:block;}
   .compare-table{display:block!important;}
   .compare-col.highlight{transform:none;margin:16px 0;}
